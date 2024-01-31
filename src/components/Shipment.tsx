@@ -8,7 +8,7 @@ interface ShipmentData {
 const Shipment: React.FC<ShipmentData> = ({shipmentId, shipmentOther}) => {
   return (
     <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px' }}>
-      <h3>ShipmentId: {id}</h3>
+      <h3>ShipmentId: {shipmentId}</h3>
       <p>Random: {shipmentOther}</p>
     </div>
   )

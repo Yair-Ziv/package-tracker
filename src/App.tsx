@@ -1,26 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Shipment from './components/Shipment'
 
-function App() {
+const App: React.FC = () => {
+  const [shipments, setShipments] = useState<Array<{shipmentId: number, shipmentOther: string}>>([])
+
+  useEffect(() => {
+    const dummyShipments = [
+      {shipmentId: 1, shipmentOther: 'GMK67'},
+      {shipmentId: 2, shipmentOther: 'MarshmallowKeycaps'}
+    ]
+
+    setShipments(dummyShipments)
+
+    return () => {
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <img src={logo} className="App-logo" alt="logo" />
+      <h1>Shipment Tracker</h1>
+      {shipments.map((shipment) => (<Shipment key={shipment.shipmentId} shipmentId={shipment.shipmentId} shipmentOther={shipment.shipmentOther} />))}
     </div>
-  );
-}
+
+  )
+  return (<p>Hey</p>);
+};
 
 export default App;
