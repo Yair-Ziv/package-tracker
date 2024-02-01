@@ -1,0 +1,14 @@
+{
+    "shipments": [
+        {
+            "orderId": "1102859386802",
+            "name": "Marshmallow Keycaps",
+            "orderDate": "31.1.2024"
+        },
+        {
+            "orderId": "11028593825468",
+            "name": "Marshmallow Keycaps",
+            "orderDate": "31.1.2024"
+        }
+    ]
+}

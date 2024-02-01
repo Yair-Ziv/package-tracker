@@ -5,7 +5,7 @@ interface ShipmentData {
   shipmentOther: string;
 }
 
-const Shipment: React.FC<ShipmentData> = ({shipmentId, shipmentOther}) => {
+const ShipmentView: React.FC<ShipmentData> = ({shipmentId, shipmentOther}) => {
   return (
     <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px' }}>
       <h3>ShipmentId: {shipmentId}</h3>
@@ -14,4 +14,4 @@ const Shipment: React.FC<ShipmentData> = ({shipmentId, shipmentOther}) => {
   )
 }
 
-export default Shipment;
+export default ShipmentView;
