@@ -3,18 +3,15 @@ import logo from './logo.svg'
 import './App.css'
 import ShipmentView from './components/ShipmentView'
 import loadShipments from './api/LoadShipments'
+import ShipmentProp from './types/Shipment'
 
 const App: React.FC = () => {
-  const [shipments, setShipments] = useState<Array<{shipmentId: number, shipmentOther: string}>>([])
+  const [shipments, setShipments] = useState<Array<ShipmentProp>>([])
 
   useEffect(() => {
-    loadShipments();
-    const dummyShipments = [
-      {shipmentId: 1, shipmentOther: 'GMK67'},
-      {shipmentId: 2, shipmentOther: 'MarshmallowKeycaps'}
-    ]
+    let userShipments = loadShipments();
 
-    setShipments(dummyShipments)
+    setShipments(userShipments)
 
     return () => {
     }
@@ -24,9 +21,12 @@ const App: React.FC = () => {
     <div>
       <img src={logo} className="App-logo" alt="logo" />
       <h1>Shipment Tracker</h1>
-      {shipments.map((shipment) => (<ShipmentView key={shipment.shipmentId} shipmentId={shipment.shipmentId} shipmentOther={shipment.shipmentOther} />))}
+      {
+        shipments.map((ship) => {
+          return <ShipmentView id={ship.id} name={ship.name}/>
+        })
+      }
     </div>
-
   )
   return (<p>Hey</p>);
 };

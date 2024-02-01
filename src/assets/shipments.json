@@ -1,14 +1,12 @@
-{
-    "shipments": [
-        {
-            "orderId": "1102859386802",
-            "name": "Marshmallow Keycaps",
-            "orderDate": "31.1.2024"
-        },
-        {
-            "orderId": "11028593825468",
-            "name": "Marshmallow Keycaps",
-            "orderDate": "31.1.2024"
-        }
-    ]
-}
+[
+    {
+        "orderId": "1102859386802",
+        "name": "Marshmallow Keycaps",
+        "orderDate": "31.1.2024"
+    },
+    {
+        "orderId": "11028593825468",
+        "name": "GMK67 Keyboard Base",
+        "orderDate": "31.1.2024"
+    }
+]

@@ -1,15 +1,11 @@
 import React from 'react';
+import ShipmentProp from '../types/Shipment';
 
-interface ShipmentData {
-  shipmentId: number;
-  shipmentOther: string;
-}
-
-const ShipmentView: React.FC<ShipmentData> = ({shipmentId, shipmentOther}) => {
+const ShipmentView: React.FC<ShipmentProp> = (prop :ShipmentProp) => {
   return (
     <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px' }}>
-      <h3>ShipmentId: {shipmentId}</h3>
-      <p>Random: {shipmentOther}</p>
+      <h3>ShipmentId: {prop.id}</h3>
+      <p>Shipment Name: {prop.name}</p>
     </div>
   )
 }

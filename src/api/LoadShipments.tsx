@@ -1,7 +1,8 @@
-const shipments = require('../assets/shipments.json')
-var i = 1;
+import shipments from '../assets/shipments.json'
+import ShipmentProp from '../types/Shipment'
 
-export default function loadShipments() {
-    console.log(shipments)
-    console.log(i++)
+export default function loadShipments() : Array<ShipmentProp> {
+    return shipments.map((object, index) => {
+        return (new ShipmentProp(object.orderId, object.name))
+    })
 }
